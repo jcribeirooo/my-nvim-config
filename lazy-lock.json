@@ -1,0 +1,12 @@
+{
+    "bufdelete.nvim": { "branch": "master", "commit": "07d1f8ba79dec59d42b975a4df1c732b2e4e37b4" },
+    "bufferline.nvim": { "branch": "main", "commit": "417b303328118b6d836ae330142e88771c48a8a3" },
+    "lazy.nvim": { "branch": "main", "commit": "dac844ed617dda4f9ec85eb88e9629ad2add5e05" },
+    "nvim-autopairs": { "branch": "master", "commit": "ae5b41ce880a6d850055e262d6dfebd362bb276e" },
+    "nvim-tree.lua": { "branch": "master", "commit": "0a54dcb76b02f3a4e2da370c7a3f6f2b7b43ef01" },
+    "nvim-treesitter": { "branch": "master", "commit": "4e35ae6f71f5b734ffd876cf8661630cea3a26ae" },
+    "nvim-web-devicons": { "branch": "master", "commit": "ab899311f8ae00a47eae8e0879506cead8eb1561" },
+    "onedark.nvim": { "branch": "master", "commit": "09b71d84bd2524438e48c0aa5b54d855cc72af32" },
+    "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
+    "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" }
+}
