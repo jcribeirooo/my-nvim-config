@@ -1,3 +1,4 @@
 require("remap")
 require("config")
-require("lazy-setup")
+require("diagnostics")
+require("plugins")
