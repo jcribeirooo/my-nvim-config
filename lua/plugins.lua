@@ -92,7 +92,8 @@ require("lazy").setup({
         "L3MON4D3/LuaSnip"
     },
     {
-        "RRethy/vim-illuminate"
+        "RRethy/vim-illuminate",
+        config = config("plugin.illuminate")
     },
     {
         "nvim-lua/popup.nvim"

@@ -5,6 +5,7 @@ vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<S-h>", vim.cmd.bprevious)
 vim.keymap.set("n", "<S-l>", vim.cmd.bnext)
 vim.keymap.set("n", "<leader>c", vim.cmd.Bdelete)
+vim.keymap.set("n", "<leader>q", vim.cmd.q)
 
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
