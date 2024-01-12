@@ -21,3 +21,9 @@ vim.api.nvim_set_keymap('i', '<A-j>', [[<Esc>:m .+1<CR>==gi]], { noremap = true,
 vim.api.nvim_set_keymap('i', '<A-k>', [[<Esc>:m .-2<CR>==gi]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<A-j>', [[:m '>+1<CR>gv=gv]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<A-k>', [[:m '<-2<CR>gv=gv]], { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+
+-- For local replace
+vim.api.nvim_set_keymap('n', '<leader>r', "gd[{V%::s/<C-R>///gc<left><left><left>", { noremap = true, silent = true })
+

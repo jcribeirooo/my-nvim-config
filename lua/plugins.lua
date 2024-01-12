@@ -25,12 +25,20 @@ require("lazy").setup({
         config = config("plugin.plenary")
     },
     {
-        'navarasu/onedark.nvim',
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme 'onedark'
+            vim.cmd.colorscheme "catppuccin-macchiato"
         end
     },
+    --{
+    --    'navarasu/onedark.nvim',
+    --    priority = 1000,
+    --    config = function()
+    --        vim.cmd.colorscheme 'onedark'
+    --    end
+    --},
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
@@ -55,6 +63,10 @@ require("lazy").setup({
     {
         "windwp/nvim-autopairs",
         config = config("nvim-autopairs")
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        config = config("plugin.mason-lspconfig")
     },
     {
         "williamboman/mason.nvim",
@@ -97,5 +109,14 @@ require("lazy").setup({
     },
     {
         "nvim-lua/popup.nvim"
+    },
+    {
+        "nvimtools/none-ls.nvim",
+        config = config("plugin.none-ls")
+    },
+    {
+        "junegunn/goyo.vim"
+        --require('lualine').hide()
+        --require('lualine').hide({unhide=true})
     }
 })
