@@ -12,6 +12,8 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 
+vim.keymap.set("n", "<F5>", vim.cmd.TestNearest)
+
 vim.api.nvim_set_keymap("v", "<Tab>", ">gv", {})
 vim.api.nvim_set_keymap("v", "<S-Tab>", "<gv", {})
 
@@ -24,7 +26,7 @@ vim.api.nvim_set_keymap("v", "<A-k>", [[:m '<-2<CR>gv=gv]], { noremap = true, si
 
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 
-vim.api.nvim_set_keymap('n', '<F5>', ':Goyo<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F10>', ':Goyo<CR>', { noremap = true, silent = true })
 function Goyo_enter()
     vim.cmd('hi CursorLine ctermbg=black term=none cterm=none')
     vim.cmd('set number')
