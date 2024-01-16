@@ -140,4 +140,8 @@ require("lazy").setup({
     {
         "junegunn/goyo.vim",
     },
+    {
+        "klen/nvim-test",
+        config = config("nvim-test"),
+    }
 })

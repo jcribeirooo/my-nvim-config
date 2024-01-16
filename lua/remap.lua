@@ -26,6 +26,8 @@ vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 
 vim.api.nvim_set_keymap('n', '<F5>', ':Goyo<CR>', { noremap = true, silent = true })
 function Goyo_enter()
+    vim.cmd('hi CursorLine ctermbg=black term=none cterm=none')
+    vim.cmd('set number')
     require("lualine").hide()
 end
 function Goyo_leave()
