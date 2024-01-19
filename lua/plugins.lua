@@ -143,5 +143,17 @@ require("lazy").setup({
     {
         "klen/nvim-test",
         config = config("nvim-test"),
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        config = config("gitsigns"),
+    },
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+            "leoluz/nvim-dap-go"
+        },
+        config = config("plugin.debugging")
     }
 })

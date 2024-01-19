@@ -12,7 +12,7 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 
-vim.keymap.set("n", "<F5>", vim.cmd.TestNearest)
+vim.keymap.set("n", "<F9>", vim.cmd.TestNearest)
 
 vim.api.nvim_set_keymap("v", "<Tab>", ">gv", {})
 vim.api.nvim_set_keymap("v", "<S-Tab>", "<gv", {})
@@ -37,3 +37,13 @@ function Goyo_leave()
 end
 vim.cmd("autocmd! User GoyoEnter nested lua Goyo_enter()")
 vim.cmd("autocmd! User GoyoLeave nested lua Goyo_leave()")
+
+vim.keymap.set("n", "`", function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<leader><F5>', function() require('dap-go').debug_test() end)
+vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+vim.keymap.set('n', '<F6>', function() require('dap').step_over() end)
+vim.keymap.set('n', '<F7>', function() require('dap').step_into() end)
+vim.keymap.set('n', '<F8>', function() require('dap').step_out() end)
+
+vim.fn.sign_define("DapBreakpoint", {text = "🔴", texthl = "", linehl = "", numhl = ""})
+vim.fn.sign_define("DapStopped", {text = "➜", texthl = "", linehl = "", numhl = ""})
