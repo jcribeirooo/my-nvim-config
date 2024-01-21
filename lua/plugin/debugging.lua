@@ -52,6 +52,16 @@ function M.setup()
 		dapui.close()
 		nvimtree.tree.open()
 	end
+
+	dap.configurations.java = {
+		{
+			type = "java",
+			request = "attach",
+			name = "Debug (Attach Port 5005)",
+			hostName = "127.0.0.1",
+			port = 5005,
+		},
+	}
 end
 
 return M

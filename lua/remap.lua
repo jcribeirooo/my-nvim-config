@@ -27,16 +27,6 @@ vim.api.nvim_set_keymap("v", "<A-k>", [[:m '<-2<CR>gv=gv]], { noremap = true, si
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 
 vim.api.nvim_set_keymap('n', '<F10>', ':Goyo<CR>', { noremap = true, silent = true })
-function Goyo_enter()
-    vim.cmd('hi CursorLine ctermbg=black term=none cterm=none')
-    vim.cmd('set number')
-    require("lualine").hide()
-end
-function Goyo_leave()
-    require("lualine").hide({ unhide = true })
-end
-vim.cmd("autocmd! User GoyoEnter nested lua Goyo_enter()")
-vim.cmd("autocmd! User GoyoLeave nested lua Goyo_leave()")
 
 vim.keymap.set("n", "`", function() require('dap').toggle_breakpoint() end)
 vim.keymap.set('n', '<leader><F5>', function() require('dap-go').debug_test() end)

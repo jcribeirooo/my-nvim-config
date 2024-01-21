@@ -3,9 +3,9 @@ local M = {}
 function M.setup()
     local lsp = require("lsp-zero")
     lsp.preset("recommended")
-    -- Fix Undefined global 'vim'
     lsp.nvim_workspace()
     local cmp = require('cmp')
+    require("luasnip.loaders.from_vscode").lazy_load()
     local cmp_select = {behavior = cmp.SelectBehavior.Select}
     local cmp_mappings = lsp.defaults.cmp_mappings({
         ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
@@ -42,6 +42,9 @@ function M.setup()
     vim.diagnostic.config({
         virtual_text = true
     })
+    require('lspconfig').jdtls.setup {
+        autostart = false
+    }
 end
 
 return M

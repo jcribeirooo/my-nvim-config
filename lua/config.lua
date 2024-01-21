@@ -10,6 +10,4 @@ vim.opt.cursorline = true
 vim.wo.number = true
 vim.opt.termguicolors = true
 vim.opt.mouse = ""
-
 vim.opt.so = 999
---vim.cmd([[ let &colorcolumn = join(range(81,999), ',') ]])

@@ -24,43 +24,13 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" },
         config = config("plugin.plenary"),
     },
-    --{
-    --    "catppuccin/nvim",
-    --    name = "catppuccin",
-    --    priority = 1000,
-    --    config = function()
-    --        --require("catppuccin").setup({
-    --        --    color_overrides = {
-    --        --        all = {
-    --        --            base = "#000000",
-    --        --            mantle = "#000000",
-    --        --            crust = "#000000",
-    --        --        },
-    --        --    },
-    --        --})
-    --        vim.cmd.colorscheme("catppuccin-macchiato")
-    --    end,
-    --},
-    --{
-    --    'navarasu/onedark.nvim',
-    --    priority = 1000,
-    --    config = function()
-    --        require('onedark').setup {
-    --            style = 'darker'
-    --        }
-    --        require('onedark').load()
-    --    end
-    --},
-    --{
-    --    'Mofiqul/vscode.nvim',
-    --    config = function ()
-    --        require('vscode').load('dark')
-    --    end
-    --},
-    { 'dasupradyumna/midnight.nvim', lazy = false, priority = 1000,
-        config = function ()
-            vim.cmd.colorscheme 'midnight'
-        end
+    {
+        "dasupradyumna/midnight.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme("midnight")
+        end,
     },
     {
         "nvim-treesitter/nvim-treesitter",
@@ -88,10 +58,6 @@ require("lazy").setup({
         config = config("nvim-autopairs"),
     },
     {
-        "williamboman/mason-lspconfig.nvim",
-        config = config("plugin.mason-lspconfig"),
-    },
-    {
         "williamboman/mason.nvim",
         config = config("plugin.mason"),
     },
@@ -103,7 +69,6 @@ require("lazy").setup({
             -- LSP Support
             { "neovim/nvim-lspconfig" },
             { "williamboman/mason.nvim" },
-            { "williamboman/mason-lspconfig.nvim" },
             -- Autocompletion
             { "hrsh7th/nvim-cmp" },
             { "hrsh7th/cmp-buffer" },
@@ -111,6 +76,7 @@ require("lazy").setup({
             { "saadparwaiz1/cmp_luasnip" },
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-nvim-lua" },
+            { "rafamadriz/friendly-snippets" }
         },
     },
     {
@@ -139,6 +105,7 @@ require("lazy").setup({
     },
     {
         "junegunn/goyo.vim",
+        config = config("plugin.goyo")
     },
     {
         "klen/nvim-test",
@@ -152,8 +119,12 @@ require("lazy").setup({
         "mfussenegger/nvim-dap",
         dependencies = {
             "rcarriga/nvim-dap-ui",
-            "leoluz/nvim-dap-go"
+            "leoluz/nvim-dap-go",
         },
-        config = config("plugin.debugging")
+        config = config("plugin.debugging"),
+    },
+    {
+        "mfussenegger/nvim-jdtls",
+        config = config("plugin.jdtls")
     }
 })
