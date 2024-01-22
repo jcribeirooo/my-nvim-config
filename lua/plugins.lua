@@ -58,8 +58,14 @@ require("lazy").setup({
         config = config("nvim-autopairs"),
     },
     {
+        "williamboman/mason-lspconfig.nvim"
+    },
+    {
         "williamboman/mason.nvim",
         config = config("plugin.mason"),
+        dependencies = {
+            { "williamboman/mason.nvim" }
+        }
     },
     {
         "VonHeikemen/lsp-zero.nvim",

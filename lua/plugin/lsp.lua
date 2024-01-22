@@ -17,7 +17,7 @@ function M.setup()
         mapping = cmp_mappings
     })
     lsp.set_preferences({
-        suggest_lsp_servers = false,
+        suggest_lsp_servers = true,
         sign_icons = {
             error = '',
             warn = '',
