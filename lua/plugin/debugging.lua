@@ -6,6 +6,9 @@ function M.setup()
 	local dapgo = require("dap-go")
 	local nvimtree = require("nvim-tree.api")
 	require("dapui").setup({
+        controls = {
+            enabled = false
+        },
 		layouts = {
 			{
 				elements = {
@@ -45,12 +48,12 @@ function M.setup()
 		nvimtree.tree.close()
 	end
 	dap.listeners.before.event_terminated.dapui_config = function()
-		dapui.close()
-		nvimtree.tree.open()
+		-- dapui.close()
+		-- nvimtree.tree.open()
 	end
 	dap.listeners.before.event_exited.dapui_config = function()
-		dapui.close()
-		nvimtree.tree.open()
+        --	dapui.close()
+	    --	nvimtree.tree.open()
 	end
 
 	dap.configurations.java = {

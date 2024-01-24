@@ -43,7 +43,8 @@ function M.setup()
         virtual_text = true
     })
     require('lspconfig').jdtls.setup {
-        autostart = false
+        autostart = false,
+        cmd = { "echo 1" }
     }
 end
 

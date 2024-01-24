@@ -13,11 +13,10 @@ function M.setup()
     require("mason-lspconfig").setup {
         ensure_installed = {
             "lua_ls",
-            "jdtls",
             "tsserver",
             "html",
             "golangci_lint_ls",
-            "gopls",
+            "gopls"
         },
     }
 end

@@ -37,3 +37,5 @@ vim.keymap.set('n', '<F8>', function() require('dap').step_out() end)
 
 vim.fn.sign_define("DapBreakpoint", {text = "🔴", texthl = "", linehl = "", numhl = ""})
 vim.fn.sign_define("DapStopped", {text = "➜", texthl = "", linehl = "", numhl = ""})
+vim.keymap.set('n', '<leader>do', function() require('dapui').open() end)
+vim.keymap.set('n', '<leader>dc', function() require('dapui').close() end)

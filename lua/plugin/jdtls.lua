@@ -14,6 +14,13 @@ function M.setup()
     local workspace_dir = vim.fn.stdpath("data") .. "/site/java/workspace-root/" .. project_name
     os.execute("mkdir -p " .. workspace_dir)
     local jdtls = require("jdtls")
+    local bundles = {
+        vim.fn.glob(vim.fn.stdpath("config") .. "/resources/java-debug.jar", 1),
+    }
+    vim.list_extend(
+        bundles,
+        vim.split(vim.fn.glob(vim.fn.stdpath("config") .. "/resources/vscode-java-test-main/server/*.jar", 1), "\n")
+    )
 
     local config = {
         cmd = {
@@ -112,18 +119,15 @@ function M.setup()
         },
 
         init_options = {
-            bundles = {
-                vim.fn.glob(
-                    vim.fn.stdpath("config") .. "/resources/java-debug.jar",
-                    1
-                ),
-            },
+            bundles = bundles
         },
     }
 
     vim.api.nvim_create_autocmd("FileType", {
         pattern = "java",
         callback = function()
+            vim.keymap.set("n", "<F9>", function() require'jdtls'.test_class() end)
+            vim.keymap.set('n', '<leader><F5>', function() require'jdtls'.test_nearest_method() end)
             vim.keymap.set("n", "<leader>gf", function()
                 require("jdtls").organize_imports()
                 vim.lsp.buf.format()
