@@ -39,3 +39,23 @@ vim.fn.sign_define("DapBreakpoint", {text = "🔴", texthl = "", linehl = "", nu
 vim.fn.sign_define("DapStopped", {text = "➜", texthl = "", linehl = "", numhl = ""})
 vim.keymap.set('n', '<leader>do', function() require('dapui').open() end)
 vim.keymap.set('n', '<leader>dc', function() require('dapui').close() end)
+
+-- Function to toggle wrap option
+function Toggle_wrap()
+    local wrap_option = vim.wo.wrap  -- Get the current value of wrap
+    vim.wo.wrap = not wrap_option     -- Toggle the wrap option
+end
+
+-- Bind the toggle_wrap function to a key, for example, <C-w>
+vim.api.nvim_set_keymap('n', '<C-w>', ':lua Toggle_wrap()<CR>', { noremap = true, silent = true })
+
+
+function Nvimtree_find_buffer()
+  local buf = vim.api.nvim_get_current_buf()
+  local bufname = vim.api.nvim_buf_get_name(buf)
+  if vim.fn.isdirectory(bufname) or vim.fn.isfile(bufname) then
+    require("nvim-tree.api").tree.find_file(vim.fn.expand("%:p"))
+  end
+end
+
+vim.api.nvim_set_keymap('n', '<S-f>', ':lua Nvimtree_find_buffer()<CR>', { noremap = true, silent = true })

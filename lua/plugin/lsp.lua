@@ -42,9 +42,10 @@ function M.setup()
     vim.diagnostic.config({
         virtual_text = true
     })
-    require('lspconfig').jdtls.setup {
+    local lspconfig = require('lspconfig')
+    lspconfig.jdtls.setup {
         autostart = false,
-        cmd = { "echo 1" }
+        cmd = { "echo", "1"},
     }
 end
 

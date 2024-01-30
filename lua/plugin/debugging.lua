@@ -59,6 +59,12 @@ function M.setup()
 	dap.configurations.java = {
 		{
 			type = "java",
+			request = "run",
+			name = "Run Java",
+            cmd = os.getenv("JAVA_HOME") .. "/bin/java"
+		},
+		{
+			type = "java",
 			request = "attach",
 			name = "Debug (Attach Port 5005)",
 			hostName = "127.0.0.1",

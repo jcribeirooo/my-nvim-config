@@ -39,7 +39,7 @@ require("lazy").setup({
     },
     {
         "kyazdani42/nvim-tree.lua",
-        config = config("plugin.nvimtree"),
+        config = config("plugin.nvim-tree"),
     },
     {
         "akinsho/bufferline.nvim",
@@ -106,6 +106,10 @@ require("lazy").setup({
         "nvim-lua/popup.nvim",
     },
     {
+        "rcarriga/nvim-notify",
+        config = config("notify")
+    },
+    {
         "nvimtools/none-ls.nvim",
         config = config("plugin.none-ls"),
     },
@@ -131,6 +135,6 @@ require("lazy").setup({
     },
     {
         "mfussenegger/nvim-jdtls",
-        config = config("plugin.jdtls")
+        config = config("plugin.nvim-jdtls")
     }
 })
