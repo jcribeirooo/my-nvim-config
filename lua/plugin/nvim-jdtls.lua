@@ -126,13 +126,13 @@ function M.setup()
     vim.api.nvim_create_autocmd("FileType", {
         pattern = "java",
         callback = function()
+            jdtls.start_or_attach(config)
             vim.keymap.set("n", "<F9>", function() require'jdtls'.test_class() end)
             vim.keymap.set('n', '<leader><F5>', function() require'jdtls'.test_nearest_method() end)
             vim.keymap.set("n", "<leader>gf", function()
                 require("jdtls").organize_imports()
                 vim.lsp.buf.format()
             end, {})
-            jdtls.start_or_attach(config)
         end,
     })
 end

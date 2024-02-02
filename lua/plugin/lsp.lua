@@ -5,6 +5,12 @@ function M.setup()
     lsp.preset("recommended")
     lsp.nvim_workspace()
     local cmp = require('cmp')
+    cmp.setup({
+        window = {
+            completion = cmp.config.window.bordered(),
+            documentation = cmp.config.window.bordered(),
+        }
+    })
     require("luasnip.loaders.from_vscode").lazy_load()
     local cmp_select = {behavior = cmp.SelectBehavior.Select}
     local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -38,6 +44,14 @@ function M.setup()
         vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     end)
+    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+        vim.lsp.handlers.hover,
+        {border = 'rounded'}
+    )
+    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+        vim.lsp.handlers.signature_help,
+        {border = 'rounded'}
+    )
     lsp.setup()
     vim.diagnostic.config({
         virtual_text = true

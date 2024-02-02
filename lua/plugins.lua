@@ -136,5 +136,14 @@ require("lazy").setup({
     {
         "mfussenegger/nvim-jdtls",
         config = config("plugin.nvim-jdtls")
+    },
+    {
+        "j-hui/fidget.nvim",
+        config = config("fidget"),
+    }
+},
+{
+    ui = {
+		border = "rounded",
     }
 })
