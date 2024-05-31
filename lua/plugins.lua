@@ -25,11 +25,13 @@ require("lazy").setup({
         config = config("plugin.plenary"),
     },
     {
-        "dasupradyumna/midnight.nvim",
+        "rebelot/kanagawa.nvim",
+        --"dasupradyumna/midnight.nvim",
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme("midnight")
+            vim.cmd.colorscheme("kanagawa")
+        --    vim.cmd.colorscheme("midnight")
         end,
     },
     {
@@ -130,6 +132,7 @@ require("lazy").setup({
         dependencies = {
             "rcarriga/nvim-dap-ui",
             "leoluz/nvim-dap-go",
+            "nvim-neotest/nvim-nio",
         },
         config = config("plugin.debugging"),
     },
