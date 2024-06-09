@@ -11,3 +11,7 @@ vim.wo.number = true
 vim.opt.termguicolors = true
 vim.opt.mouse = ""
 vim.opt.so = 999
+
+if vim.fn.has('clipboard') then
+    vim.opt.clipboard:append('unnamedplus')
+end

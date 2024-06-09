@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.fn.exists(lazypath) then
     vim.fn.system({
         "git",
         "clone",
@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
         lazypath,
     })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 local config = function(plugin)
@@ -20,18 +21,15 @@ end
 require("lazy").setup({
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.2",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = config("plugin.plenary"),
     },
     {
         "rebelot/kanagawa.nvim",
-        --"dasupradyumna/midnight.nvim",
         lazy = false,
         priority = 1000,
         config = function()
             vim.cmd.colorscheme("kanagawa")
-        --    vim.cmd.colorscheme("midnight")
         end,
     },
     {
@@ -60,14 +58,14 @@ require("lazy").setup({
         config = config("nvim-autopairs"),
     },
     {
-        "williamboman/mason-lspconfig.nvim"
+        "williamboman/mason-lspconfig.nvim",
     },
     {
         "williamboman/mason.nvim",
         config = config("plugin.mason"),
         dependencies = {
-            { "williamboman/mason.nvim" }
-        }
+            { "williamboman/mason.nvim" },
+        },
     },
     {
         "VonHeikemen/lsp-zero.nvim",
@@ -84,7 +82,7 @@ require("lazy").setup({
             { "saadparwaiz1/cmp_luasnip" },
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-nvim-lua" },
-            { "rafamadriz/friendly-snippets" }
+            { "rafamadriz/friendly-snippets" },
         },
     },
     {
@@ -109,7 +107,7 @@ require("lazy").setup({
     },
     {
         "rcarriga/nvim-notify",
-        config = config("notify")
+        config = config("notify"),
     },
     {
         "nvimtools/none-ls.nvim",
@@ -117,7 +115,7 @@ require("lazy").setup({
     },
     {
         "junegunn/goyo.vim",
-        config = config("plugin.goyo")
+        config = config("plugin.goyo"),
     },
     {
         "klen/nvim-test",
@@ -138,15 +136,22 @@ require("lazy").setup({
     },
     {
         "mfussenegger/nvim-jdtls",
-        config = config("plugin.nvim-jdtls")
+        config = config("plugin.nvim-jdtls"),
     },
     {
         "j-hui/fidget.nvim",
         config = config("fidget"),
-    }
-},
-{
+    },
+    {
+        "Exafunction/codeium.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        config = config("codeium"),
+    },
+}, {
     ui = {
-		border = "rounded",
-    }
+        border = "rounded",
+    },
 })

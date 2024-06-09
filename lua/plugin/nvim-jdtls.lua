@@ -15,11 +15,11 @@ function M.setup()
     os.execute("mkdir -p " .. workspace_dir)
     local jdtls = require("jdtls")
     local bundles = {
-        vim.fn.glob(vim.fn.stdpath("config") .. "/resources/java-debug.jar", 1),
+        vim.fn.glob(vim.fn.stdpath("config") .. "/resources/java-debug.jar", true),
     }
     vim.list_extend(
         bundles,
-        vim.split(vim.fn.glob(vim.fn.stdpath("config") .. "/resources/vscode-java-test-main/server/*.jar", 1), "\n")
+        vim.split(vim.fn.glob(vim.fn.stdpath("config") .. "/resources/vscode-java-test-main/server/*.jar", true), "\n")
     )
 
     local config = {
