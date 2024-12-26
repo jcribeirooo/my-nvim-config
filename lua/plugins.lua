@@ -143,12 +143,18 @@ require("lazy").setup({
         config = config("fidget"),
     },
     {
-        "Exafunction/codeium.nvim",
-        requires = {
+        "Exafunction/codeium.vim",
+        dependencies = {
             "nvim-lua/plenary.nvim",
             "hrsh7th/nvim-cmp",
         },
-        config = config("codeium"),
+        commit = "289eb724e5d6fab2263e94a1ad6e54afebefafb2",
+        event = "BufEnter",
+        config = function()
+            vim.keymap.set("i", "<C-Enter>", function()
+                return vim.fn["codeium#Accept"]()
+            end, { expr = true, silent = true })
+        end,
     },
 }, {
     ui = {

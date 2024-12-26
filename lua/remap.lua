@@ -99,3 +99,6 @@ end
 vim.api.nvim_set_keymap("n", "<F12>", ":lua Toggle_dapui()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>b", [[:hi Normal guibg=NONE ctermbg=NONE<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "J", ":lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<S-M-j>', '10j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-M-k>', '10k', { noremap = true, silent = true })
